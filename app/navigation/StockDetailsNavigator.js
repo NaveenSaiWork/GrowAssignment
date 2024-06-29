@@ -21,3 +21,4 @@ const StockDetailsNavigator = () => (
 );
 
 export default StockDetailsNavigator;
+// I am naveen
