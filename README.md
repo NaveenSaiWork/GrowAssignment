@@ -11,3 +11,17 @@ This stock app allows users to view top gainers, top losers, and detailed inform
 
 ## Screenshots
 
+![Screenshot 1](screenshots/Initial%20Screen.jpeg)
+
+Screenshot of the App when opened
+
+![Screenshot 2](screenshots/Top%20Gainers%20Screen.jpeg)
+
+Screenshot of the Top Gainers screen showing stock prices and percentages.
+
+![Screenshot 3](screenshots/Top%20Losers%20Screen.jpeg)
+
+Screenshot of the Top Losers screen showing stock prices and percentages.
+
+![Screenshot 4](screenshots/Stock%20Details%20Screen.jpeg)
+
