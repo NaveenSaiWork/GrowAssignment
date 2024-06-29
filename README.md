@@ -25,3 +25,35 @@ Screenshot of the Top Losers screen showing stock prices and percentages.
 
 ![Screenshot 4](screenshots/Stock%20Details%20Screen.jpeg)
 
+### Prerequisites
+- [Node.js](https://nodejs.org/) installed
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/NaveenSaiWork/GrowAssignment.git
+   cd GrowAssignment
+
+2. Install dependencies:
+   ```sh
+   npm install
+   npx expo start
+3. Download Lastest version of Expo Go in mobile app and Scan the qr
+   ```sh
+   https://expo.dev/go
+
+### Usage
+
+1. Navigating Between Tabs:
+   - Open the app to see the initial screen.
+   - Use the bottom tabs to navigate between "Top Gainers" and "Top Losers".
+
+2. Viewing Stock Details:
+   Click on any stock in the "Top Gainers" or "Top Losers" list to view detailed information, including price history and descriptions.
+
+### Technologies Used
+
+#### React Native
+#### Expo
+#### Axios
