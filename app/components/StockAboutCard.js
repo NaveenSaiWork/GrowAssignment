@@ -37,16 +37,16 @@ function StockAboutCard({ stockDetails, price, ticker }) {
   const fetchData = async (ticker) => {
     const CACHE_KEY = `${ticker}_TimeSeries`;
     try {
-      // if (AsyncStorage.getItem(CACHE_KEY)) {
-      //   console.log("fetching from cache");
-      //   const cachedData = await AsyncStorage.getItem(CACHE_KEY);
-      //   if (cachedData) {
-      //     const data = getRequiredDetails(JSON.parse(cachedData));
+      if (AsyncStorage.getItem(CACHE_KEY)) {
+        console.log("fetching from cache");
+        const cachedData = await AsyncStorage.getItem(CACHE_KEY);
+        if (cachedData) {
+          const data = getRequiredDetails(JSON.parse(cachedData));
 
-      //     setStockTimeSeries(data);
-      //     return;
-      //   }
-      // }
+          setStockTimeSeries(data);
+          return;
+        }
+      }
       const response = await StockTimeSeries.getStockTimeSeries(ticker);
       if (response.ok) {
         if (response.data) {
@@ -78,8 +78,7 @@ function StockAboutCard({ stockDetails, price, ticker }) {
     <View style={styles.container}>
       {Name && <Text style={styles.name}>{Name}</Text>}
 
-      {/* {stockTimeSeries.length > 0 && <LineChart chartData={stockTimeSeries} />} */}
-      <LineChart />
+      {stockTimeSeries.length > 0 && <LineChart chartData={stockTimeSeries} />}
 
       <HorizontalLine />
       {Description && <Text style={styles.description}>{Description}</Text>}

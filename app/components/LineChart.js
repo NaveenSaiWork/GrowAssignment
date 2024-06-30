@@ -7,41 +7,9 @@ import {
   HorizontalAxis,
   VerticalAxis,
 } from "react-native-responsive-linechart";
-// { chartData }
-const LineChartComponent = () => {
-  // console.log("chartData", chartData);
-  const chartData = [
-    {
-      x: 0,
-      y: 0.023,
-      date: "2024-06",
-    },
-    {
-      x: 1,
-      y: 0.0688,
-      date: "2024-05",
-    },
-    {
-      x: 2,
-      y: 0.0401,
-      date: "2024-04",
-    },
-    {
-      x: 3,
-      y: 0.0625,
-      date: "2024-03",
-    },
-    {
-      x: 4,
-      y: 0.0462,
-      date: "2024-02",
-    },
-    {
-      x: 5,
-      y: 0.0301,
-      date: "2024-01",
-    },
-  ];
+
+const LineChartComponent = ({ chartData }) => {
+  console.log("chartData", chartData);
   return (
     <View style={styles.container}>
       <Chart
@@ -57,7 +25,16 @@ const LineChartComponent = () => {
         />
         <HorizontalAxis
           tickCount={Math.min(5, chartData.length)}
-          // theme={{ labels: { formatter: (v) => chartData[v].date } }}
+          // chartData[v].date
+          theme={{
+            labels: {
+              formatter: (v) => {
+                if (chartData[v]) {
+                  return chartData[v].date;
+                }
+              },
+            },
+          }}
         />
         <Area
           theme={{
@@ -84,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: 10,
+    padding: 20,
   },
 });
 
